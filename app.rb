@@ -1,4 +1,3 @@
-#The beginning of app.rn
 require 'sinatra'
 require 'json'
 
