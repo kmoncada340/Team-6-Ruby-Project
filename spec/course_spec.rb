@@ -10,9 +10,26 @@ RSpec.describe Lightcast::Course do
     
     describe '#meetings' do
         it 'returns a list of course meetings' do
-            allow(@course.connection).to receive(:get).and_return('meetings list')
+            expected_response = {
+              "results": [
+                {
+                  "id": 0,
+                  "courseId": "123ABC",
+                  "title": "My Course Meeting",
+                  "description": "A description of the meeting",
+                  "start": "2024-04-29T23:05:15.674Z",
+                  "end": "2024-04-29T23:05:15.674Z",
+                  "externalLink": "www.zoom.com/meeting/123ABC"
+                }
+              ],
+              "paging": {
+                "nextPage": "https://api.blackboard.com/page/next"
+              }
+            }.to_json
 
-            expect(@course.meetings).to eq('meetings list')
+            allow(@course.connection).to receive(:get).and_return(expected_response)
+
+            expect(@course.meetings).to eq(expected_response)
         end
     end
 end
