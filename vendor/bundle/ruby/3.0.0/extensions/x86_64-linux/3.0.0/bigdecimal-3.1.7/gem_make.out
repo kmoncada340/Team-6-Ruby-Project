@@ -1,5 +1,5 @@
 current directory: /home/lily/Documents/vendor/bundle/ruby/3.0.0/gems/bigdecimal-3.1.7/ext/bigdecimal
-/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240424-68670-2r6w61.rb extconf.rb
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240425-69887-hegcmg.rb extconf.rb
 checking for __builtin_clz()... *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary
 libraries and/or headers.  Check the mkmf.log file for more details.  You may

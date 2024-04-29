@@ -2,9 +2,15 @@ module Documents
     module Actions
         module Course
 
-            def course_get(id)
-                @client.connection_services.post("/learn/api/public/v1/courses/{courseId}/meetings", **params)
+            def initialize(connection:, course_id:)
+                @connection = connection
+                @course_id = course_id
             end
+
+            
+            def meetings
+                @connection.get("/learn/api/public/v1/courses/#{@course_id}/meetings")
+              end  
 
         end    
     end
