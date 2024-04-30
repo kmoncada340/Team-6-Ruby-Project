@@ -3,9 +3,12 @@ require 'json'
 require 'date'
 
 def get_events_for_week(week_number)
-  url = URI("https://api.example.com/events?week=#{week_number}")
-  response = Net::HTTP.get(url)
+  base_url = 'https://api.example.com'
+  endpoint = '/calendar/events'
+  url = URI("#{base_url}#{endpoint}?week=#{week_number}")
   
+  response = Net::HTTP.get(url)
+
   if response.code == "200"
     events = JSON.parse(response.body)
     return events
@@ -31,6 +34,12 @@ def display_calendar(events)
   end
 end
 
-# 使用示例：显示本周事件
-events = get_events_for_week(1)
+# 示例数据：假设这是从API获取到的一周内的事件
+events = [
+  { 'date' => '2024-05-01', 'description' => 'Meeting with team' },
+  { 'date' => '2024-05-02', 'description' => 'Project deadline' },
+  { 'date' => '2024-05-04', 'description' => 'Lunch with client' }
+]
+
+# 显示日历
 display_calendar(events)
