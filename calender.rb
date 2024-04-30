@@ -3,7 +3,7 @@ require 'json'
 require 'date'
 
 def get_events_for_week(week_number)
-  base_url = 'https://api.example.com'
+  base_url = 'https://developer.blackboard.com/portal/displayApi'
   endpoint = '/calendar/events'
   url = URI("#{base_url}#{endpoint}?week=#{week_number}")
   
