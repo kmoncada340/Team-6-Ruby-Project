@@ -34,12 +34,12 @@ def display_calendar(events)
   end
 end
 
-# 示例数据：假设这是从API获取到的一周内的事件
+# Sample
 events = [
   { 'date' => '2024-05-01', 'description' => 'Meeting with team' },
   { 'date' => '2024-05-02', 'description' => 'Project deadline' },
   { 'date' => '2024-05-04', 'description' => 'Lunch with client' }
 ]
 
-# 显示日历
+
 display_calendar(events)
